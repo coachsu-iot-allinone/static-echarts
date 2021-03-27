@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, ECharts</title>
+    <!-- 引用ECharts函式庫 -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px;height:400px;"></div>
+    <script type="text/javascript">
+      var echart = echarts.init(document.getElementById('main'));
+      var option = {
+        title: { text: 'Hello, ECharts'}, //圖表抬頭
+        xAxis: {data: ["Bob","Mary","John"]},
+        yAxis: {},
+        series: [
+          {name: '年齡', type: 'line', data: [30, 36, 23]},
+        ],
+        legend: { data:['年齡']},
+        tooltip: {},
+        /*
+        toolbox: {
+          feature : {
+            mark : {},
+            dataView: { },
+            restore: {},
+            dataZoom: {},
+            saveAsImage: {},
+            magicType: {
+              type: ['line', 'line']
+            }
+          }
+        },
+        */
+      };
+      echart.setOption(option);
+    </script>
+</body>  
+</html>
