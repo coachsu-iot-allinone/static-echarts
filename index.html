@@ -7,17 +7,28 @@
     <script src="echarts.min.js"></script>
 </head>
 <body>
+    <!-- 準備繪圖區域(div) -->
     <div id="main" style="width:600px;height:400px;"></div>
     <script type="text/javascript">
+      // 初始化並在id為main的區域上產生圖表
       var echart = echarts.init(document.getElementById('main'));
+      // 設定圖表
       var option = {
-        title: { text: 'Hello, ECharts'}, //圖表抬頭
+        title: { text: 'Hello, ECharts'},
         xAxis: {data: ["Bob","Mary","John"]},
         yAxis: {},
         series: [
-          {name: '年齡', type: 'line', data: [30, 36, 23]},
+          {name: '年齡', type: 'line', data: [30, 36, 23],
+          /*  markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },*/
+          },
+          /*{name: '年資', type: 'bar', data: [10, 8, 15],},*/
         ],
-        legend: { data:['年齡']},
+        legend: { data:['年齡'/*,'年資'*/]},
         tooltip: {},
         /*
         toolbox: {
@@ -34,6 +45,7 @@
         },
         */
       };
+      // 繪製圖表
       echart.setOption(option);
     </script>
 </body>  
